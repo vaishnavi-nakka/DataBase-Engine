@@ -28,5 +28,6 @@ This project is not licensed under any organization. But for the training purpos
 
 ## Acknowledgments
 
-* w3cschools.com
+* javatpoint
+* GeeksForGeeks
 * niit_stackroute
