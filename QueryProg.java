@@ -3,7 +3,7 @@ package org.stackroute;
 import java.util.Scanner;
 
 public class QueryProg {
-	public void getFileName(String query){
+	public static void getFileName(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll(",", " ");
 		query = query.replaceAll("=", " = ");
@@ -26,7 +26,7 @@ public class QueryProg {
         }
 	}
 	
-	public void getAggregate(String query){
+	public static void getAggregate(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll(",", " ");
 		query = query.replaceAll("=", " = ");
@@ -52,7 +52,7 @@ public class QueryProg {
         
 	}
 	
-	public void getFields(String query){
+	public static void getFields(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll(",", " ");
 		query = query.replaceAll("=", " = ");
@@ -72,7 +72,7 @@ public class QueryProg {
         }
 	}
 	
-	public void getOrderBy(String query){
+	public static void getOrderBy(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll(",", " ");
 		query = query.replaceAll("=", " = ");
@@ -94,7 +94,7 @@ public class QueryProg {
         }
 	}
 	
-	public void getGroupBy(String query){
+	public static void getGroupBy(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll(",", " ");
 		query = query.replaceAll("=", " = ");
@@ -120,7 +120,7 @@ public class QueryProg {
         }
 	}
 	
-	public void getBasePart(String query){
+	public static void getBasePart(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll("=", " = ");
 		query = query.replaceAll("\\s+", " ");
@@ -140,7 +140,7 @@ public class QueryProg {
         System.out.println();
 	}
 	
-	public void getFilterPart(String query){
+	public static void getFilterPart(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll(",", " ");
 		query = query.replaceAll("=", " = ");
@@ -170,7 +170,7 @@ public class QueryProg {
         
 	}
 	
-	public void getFilterPartConds1(String query){
+	public static void getFilterPartConds1(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll(",", " ");
 		query = query.replaceAll("=", " = ");
@@ -214,7 +214,7 @@ public class QueryProg {
 	
 	
 	
-	public void getFilterPartConds2(String query){
+	public static void getFilterPartConds2(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll(",", " ");
 		query = query.replaceAll("=", " = ");
@@ -260,7 +260,7 @@ public class QueryProg {
         
 	}
 	
-	public void extractLogOps(String query){
+	public static void extractLogOps(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll("=", " = ");
 		query = query.replaceAll("\\s+", " ");
@@ -279,7 +279,7 @@ public class QueryProg {
         
 	}
 	
-	public void SplitWords(String query){
+	public static void splitWords(String query){
 		query = query.replaceAll(";", "");
 		query = query.replaceAll(",", " ");
 		query = query.replaceAll("=", " = ");
@@ -296,7 +296,6 @@ public class QueryProg {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
         String str = scan.nextLine();
-        QueryProg query = new QueryProg();
         
         System.out.println("Press 1 to Split Words");
         System.out.println("Press 2 to get the file names");
@@ -314,27 +313,27 @@ public class QueryProg {
         while(i == 1)
         	
         switch(scan.nextInt()){
-        	case 1: query.SplitWords(str);
+        	case 1: splitWords(str);
         	        break;
-        	case 2: query.getFileName(str);
+        	case 2: getFileName(str);
 	                break;
-        	case 3: query.getBasePart(str);
+        	case 3: getBasePart(str);
 	                break;
-        	case 4: query.getFilterPart(str);
+        	case 4: getFilterPart(str);
 	        		break;
-        	case 5: query.getFilterPartConds1(str);
+        	case 5: getFilterPartConds1(str);
 	        		break;
-        	case 6: query.getFilterPartConds2(str);
+        	case 6: getFilterPartConds2(str);
 	        		break;
-        	case 7: query.extractLogOps(str);
+        	case 7: extractLogOps(str);
 	        		break;
-        	case 8: query.getFields(str);
+        	case 8: getFields(str);
 	        		break;
-        	case 9: query.getOrderBy(str);
+        	case 9: getOrderBy(str);
 	        		break;
-        	case 10: query.getGroupBy(str);
+        	case 10:getGroupBy(str);
 	        		break;
-        	case 11: query.getAggregate(str);
+        	case 11: getAggregate(str);
 	        		break;
         	case 12: i=0;
     				break;
